@@ -1,6 +1,7 @@
 import 'package:bike_shopping_app/models/product_model.dart';
 import 'package:bike_shopping_app/presentation/widgets/item_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemList extends StatelessWidget {
   ItemList({super.key});
@@ -83,11 +84,11 @@ class ItemList extends StatelessWidget {
       itemCount: products.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 12,
-        childAspectRatio: 165 / 219,
+        crossAxisSpacing: 12.w,
+        mainAxisSpacing: 12.h,
+        childAspectRatio: (165 / 219).h,
       ),
       itemBuilder: (context, index) {
         return ItemCard(product: products[index]);

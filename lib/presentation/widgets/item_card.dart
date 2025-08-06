@@ -14,23 +14,23 @@ class ItemCard extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          width: 165,
-          height: 219,
+          width: 165.w,
+          height: 219.h,
           child: CustomPaint(painter: CustomShapePainter2()),
         ),
         Positioned(
-          top: 35,
+          top: 35.h,
           left: 0,
           right: 0,
           child: Image.asset(product.imageUrl, height: 110.h, width: 120.w),
         ),
         Positioned(
-          top: 20,
-          right: 15,
+          top: 20.h,
+          right: 15.w,
           child: CustomHeart(fav: product.isFavorite),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 12, bottom: 8),
+          padding: EdgeInsets.only(left: 12.w, bottom: 8.h),
           child: ItemData(product: product),
         ),
       ],

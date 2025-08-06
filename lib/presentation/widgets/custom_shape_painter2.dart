@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomShapePainter2 extends CustomPainter {
   @override
@@ -36,11 +37,11 @@ class CustomShapePainter2 extends CustomPainter {
         Rect.fromLTWH(0, 0, size.width, size.height),
       )
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
+      ..strokeWidth = 2.0.w;
 
     final path = Path();
-    double cornerRadius = 20.0;
-    double rightSideRaise = 30.0;
+    double cornerRadius = 20.0.r;
+    double rightSideRaise = 30.0.h;
 
     path.moveTo(cornerRadius, rightSideRaise);
     path.lineTo(size.width - cornerRadius, 0);
@@ -70,7 +71,6 @@ class CustomShapePainter2 extends CustomPainter {
     path.close();
 
     canvas.drawPath(path, backgroundPaint);
-
     canvas.drawPath(path, borderPaint);
   }
 

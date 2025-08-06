@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HeartPainter extends CustomPainter {
   final double size;
@@ -25,13 +26,12 @@ class HeartPainter extends CustomPainter {
         Rect.fromLTWH(0, 0, size.width, size.height),
       )
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0;
+      ..strokeWidth = 2.0.w;
 
     final path = Path();
     final w = size.width;
     final h = size.height;
 
-    // مسار قلب محسّن
     path.moveTo(w * 0.5, h * 0.3);
     path.cubicTo(w * 0.2, h * 0.1, w * 0.1, h * 0.4, w * 0.5, h * 0.9);
     path.cubicTo(w * 0.9, h * 0.4, w * 0.8, h * 0.1, w * 0.5, h * 0.3);

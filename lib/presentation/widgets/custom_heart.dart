@@ -1,5 +1,6 @@
 import 'package:bike_shopping_app/presentation/widgets/heart_painter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomHeart extends StatelessWidget {
   final double size;
@@ -10,13 +11,13 @@ class CustomHeart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: size,
-      height: size,
+      width: size.h,
+      height: size.h,
       child: CustomPaint(
         painter: HeartPainter(
           size,
           colors: fav
-              ? const [Color(0xFF4E49F2), Color(0xFF34CAE8)] // الألوان لو مفضل
+              ? const [Color(0xFF4E49F2), Color(0xFF34CAE8)]
               : const [Colors.white, Colors.white],
         ),
       ),

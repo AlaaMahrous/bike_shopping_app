@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class IconCard extends StatelessWidget {
   const IconCard({super.key, this.child, this.height = 44});
@@ -11,8 +12,8 @@ class IconCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        width: height,
-        height: height,
+        width: height.h,
+        height: height.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -23,7 +24,7 @@ class IconCard extends StatelessWidget {
               Color(0xFF4E4AF2),
             ],
           ),
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(10.r),
         ),
         child: Center(child: child),
       ),

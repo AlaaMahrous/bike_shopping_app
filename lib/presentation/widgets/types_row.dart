@@ -9,18 +9,18 @@ class TypesRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 13),
+      padding: EdgeInsets.symmetric(horizontal: 13.w),
       child: SizedBox(
-        height: 90,
+        height: 90.h,
         width: double.infinity,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
               children: [
-                SizedBox(height: 40),
+                SizedBox(height: 40.h),
                 IconCard(
-                  height: 50,
+                  height: 50.h,
                   child: Text(
                     'All',
                     style: TextStyle(
@@ -35,19 +35,19 @@ class TypesRow extends StatelessWidget {
             ),
             Column(
               children: [
-                SizedBox(height: 30),
+                SizedBox(height: 30.h),
                 BikeTypeCard(image: 'assets/images/accumulator.png'),
               ],
             ),
             Column(
               children: [
-                SizedBox(height: 20),
+                SizedBox(height: 20.h),
                 BikeTypeCard(image: 'assets/images/motorway.png'),
               ],
             ),
             Column(
               children: [
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 BikeTypeCard(image: 'assets/images/mountains.png'),
               ],
             ),

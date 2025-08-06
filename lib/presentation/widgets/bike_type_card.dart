@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BikeTypeCard extends StatelessWidget {
   const BikeTypeCard({super.key, required this.image});
@@ -9,10 +10,10 @@ class BikeTypeCard extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        width: 50,
-        height: 50,
+        width: 50.h,
+        height: 50.h,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
@@ -25,8 +26,8 @@ class BikeTypeCard extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Image.asset(image, height: 27, width: 27),
+          padding: EdgeInsets.all(10.h),
+          child: Image.asset(image, height: 27.h, width: 27.h),
         ),
       ),
     );
