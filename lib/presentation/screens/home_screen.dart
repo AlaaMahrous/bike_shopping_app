@@ -1,4 +1,6 @@
 import 'package:bike_shopping_app/main.dart';
+import 'package:bike_shopping_app/presentation/widgets/custom_shape.dart';
+import 'package:bike_shopping_app/presentation/widgets/icon_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
