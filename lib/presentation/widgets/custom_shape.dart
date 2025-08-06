@@ -14,10 +14,11 @@ class CustomShape extends StatelessWidget {
           height: 240.h,
           child: CustomPaint(painter: CustomShapePainter()),
         ),
-        Center(
+        Positioned(
+          top: -15.h,
           child: Image.asset(
             'assets/images/bike.png',
-            height: 240.h,
+            height: 250.h,
             width: 360.w,
           ),
         ),

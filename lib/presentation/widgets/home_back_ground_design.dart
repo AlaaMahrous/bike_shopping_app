@@ -8,7 +8,7 @@ class HomeBackGroundDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       top: 200.h,
-      left: 65.w,
+      left: 110.w,
       child: Transform.rotate(
         angle: 720,
         child: Opacity(
