@@ -4,14 +4,36 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BikeApp extends StatelessWidget {
+class BikeApp extends StatefulWidget {
   const BikeApp({super.key});
+
+  @override
+  State<BikeApp> createState() => _BikeAppState();
+}
+
+class _BikeAppState extends State<BikeApp> {
+  int selectedIndex = 0;
+
+  final List<IconData> icons = [
+    FontAwesomeIcons.bicycle,
+    FontAwesomeIcons.map,
+    FontAwesomeIcons.cartShopping,
+    Icons.person,
+    FontAwesomeIcons.file,
+  ];
+  final List<Widget> pages = [
+    HomeScreen(),
+    Placeholder(color: Colors.green),
+    Placeholder(color: Colors.blue),
+    Placeholder(color: Colors.orange),
+    Placeholder(color: Colors.red),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        const HomeScreen(),
+        IndexedStack(index: selectedIndex, children: pages),
         Positioned(
           bottom: -20.h,
           left: 0,
@@ -34,25 +56,43 @@ class BikeApp extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(bottom: 20.h, left: 26.w, child: const TiltedRectangle()),
+
         Positioned(
-          bottom: 22.h,
-          left: 90.w,
+          bottom: 20.h,
+          left: 0,
           right: 0,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 35.w),
+            padding: EdgeInsets.symmetric(horizontal: 26.w),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(FontAwesomeIcons.map, color: Colors.white, size: 22.sp),
-                Icon(
-                  FontAwesomeIcons.cartShopping,
-                  color: Colors.white,
-                  size: 22.sp,
-                ),
-                Icon(Icons.person, color: Colors.white, size: 22.sp),
-                Icon(FontAwesomeIcons.file, color: Colors.white, size: 22.sp),
-              ],
+              children: List.generate(icons.length, (index) {
+                bool isSelected = selectedIndex == index;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = index;
+                    });
+                  },
+                  child: isSelected
+                      ? TiltedRectangle(
+                          size: 70,
+                          cornerRadius: 8,
+                          child: Icon(
+                            icons[index],
+                            color: Colors.white,
+                            size: 22.sp,
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsetsGeometry.only(top: 40.h),
+                          child: Icon(
+                            icons[index],
+                            color: Colors.white,
+                            size: 22.sp,
+                          ),
+                        ),
+                );
+              }),
             ),
           ),
         ),
