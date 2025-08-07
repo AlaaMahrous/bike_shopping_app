@@ -36,8 +36,8 @@ class _BikeAppState extends State<BikeApp> {
         IndexedStack(index: selectedIndex, children: pages),
         Positioned(
           bottom: -20.h,
-          left: 0,
-          right: 0,
+          left: -20.w,
+          right: -20.w,
           child: Transform.rotate(
             angle: 600,
             child: Container(

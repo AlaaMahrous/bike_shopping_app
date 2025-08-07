@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         children: [
           HomeBackGroundDesign(),
           Padding(
-            padding: EdgeInsets.only(top: 60.h, right: 20.w, left: 20.w),
+            padding: EdgeInsets.only(top: 48.h, right: 20.w, left: 20.w),
             child: Column(
               children: [
                 CustomedAppBar(),
